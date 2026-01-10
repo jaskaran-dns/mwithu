@@ -6,6 +6,7 @@
     <title>MWITHU Foundation - Building Helpful Society For Youth Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* --- GLOBAL RESETS --- */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +20,7 @@
             color: #fff;
         }
 
-        /* Header & Navigation */
+        /* --- HEADER & NAVIGATION --- */
         header {
             position: fixed;
             top: 0;
@@ -43,11 +44,11 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            z-index: 1001; /* Keeps logo above mobile menu */
+            z-index: 1001;
         }
 
         .logo-svg {
-            width: 40px; /* Adjusted size */
+            width: 40px;
             height: 40px;
             animation: float 3s ease-in-out infinite;
         }
@@ -110,14 +111,14 @@
             background-color: white;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 6rem 5% 2rem; /* Added top padding for fixed header */
+            padding: 6rem 5% 2rem;
             overflow: hidden;
         }
 
@@ -194,7 +195,7 @@
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        /* Features Section */
+        /* --- FEATURES SECTION --- */
         .features {
             padding: 6rem 5%;
             max-width: 1400px;
@@ -213,7 +214,7 @@
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Changed minmax for better mobile fit */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -253,7 +254,7 @@
             line-height: 1.6;
         }
 
-        /* Mission Section */
+        /* --- MISSION SECTION --- */
         .mission {
             padding: 6rem 5%;
             background: rgba(102, 126, 234, 0.05);
@@ -280,90 +281,123 @@
             color: #a0a0a0;
         }
 
-        /* Contact Section */
+        /* --- CONTACT & CHATBOT SECTION (NEW) --- */
         .contact {
             padding: 6rem 5%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr; /* Changed to single column since form is missing, safer */
-            gap: 3rem;
-            justify-items: center; /* Centers content */
+        .contact-subtitle {
+            text-align: center; 
+            color: #a0a0a0; 
+            margin-bottom: 3rem; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto;
+            font-size: 1.1rem;
         }
 
-        .social-card {
+        .chat-buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .chat-card {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 2rem;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            text-decoration: none;
-            color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            width: 100%;
-            max-width: 400px; /* Prevents it from being too wide */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .social-card:hover {
+        .chat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            background: rgba(102, 126, 234, 0.1);
         }
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .icon-wrapper {
+            width: 55px;
+            height: 55px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            transition: 0.3s;
             flex-shrink: 0;
         }
 
-        /* Footer */
+        .text-wrapper h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+
+        .text-wrapper p {
+            color: #ccc;
+            font-size: 0.85rem;
+        }
+
+        .arrow-icon {
+            margin-left: auto;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .chat-card:hover .arrow-icon {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Contact Colors */
+        .whatsapp-card:hover { border-color: #25D366; box-shadow: 0 0 20px rgba(37, 211, 102, 0.2); }
+        .whatsapp-card .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: #25D366; }
+
+        .insta-bot-card:hover { border-color: #667eea; box-shadow: 0 0 20px rgba(102, 126, 234, 0.2); }
+        .insta-bot-card .icon-wrapper { background: rgba(102, 126, 234, 0.1); color: #667eea; }
+
+        .insta-page-card:hover { border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.2); }
+        .insta-page-card .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: #E1306C; }
+
+
+        /* --- FOOTER --- */
         footer {
             padding: 3rem 5%;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
         }
 
         footer p {
             color: #a0a0a0;
         }
 
-        /* =========================================
-           RESPONSIVE DESIGN (MOBILE MEDIA QUERIES)
-           ========================================= */
-        @media (max-width: 768px) {
+        /* --- MOBILE MEDIA QUERIES --- */
+        @media (max-width: 900px) {
             
-            /* Hamburger Visible on Mobile */
-            .hamburger {
-                display: block;
-            }
+            /* Hamburger Logic */
+            .hamburger { display: block; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-            /* Toggle Hamburger Animation */
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            /* Nav Menu Slide-in */
+            /* Nav Menu */
             .nav-links {
                 position: fixed;
                 right: -100%;
-                top: 70px; /* Height of header */
+                top: 70px;
                 gap: 0;
                 flex-direction: column;
                 background-color: rgba(10, 10, 10, 0.98);
@@ -375,55 +409,20 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            .nav-links.active {
-                right: 0;
-            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
 
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-
-            /* Adjust Fonts and Padding for Mobile */
-            .hero {
-                padding-top: 8rem; /* More space for header */
-            }
-
-            .hero h2 {
-                font-size: 2.5rem; /* Smaller Font */
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 2rem;
-                width: 100%; /* Full width button on mobile */
-                max-width: 300px;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 2.5rem;
-            }
+            /* Typography & Layout Fixes */
+            .hero { padding-top: 8rem; }
+            .hero h2 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.1rem; }
+            .cta-button { width: 100%; max-width: 300px; padding: 0.8rem 2rem; }
+            .section-title, .mission h2 { font-size: 2.2rem; margin-bottom: 2.5rem; }
+            .mission p { font-size: 1rem; }
             
-            .features, .mission, .contact {
-                padding: 4rem 5%;
-            }
-
-            .mission h2 {
-                font-size: 2.2rem;
-            }
-
-            .mission p {
-                font-size: 1rem;
-            }
-            
-            /* Fix Grid Layouts */
-            .feature-grid {
-                grid-template-columns: 1fr; /* Stack vertically */
-            }
+            /* Stack Everything */
+            .feature-grid, .chat-buttons-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .chat-card { padding: 1.2rem; }
         }
     </style>
 </head>
@@ -462,8 +461,7 @@
 
     <section id="home" class="hero">
         <div class="hero-bg"></div>
-        <div class="particles">
-            </div>
+        <div class="particles"></div>
         <div class="hero-content">
             <h2>Building Helpful Society<br>For Youth Growth</h2>
             <p class="tagline">Empowering the next generation to reach their full potential</p>
@@ -515,16 +513,41 @@
     </section>
 
     <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Connect With Us</h2>
+        <p class="contact-subtitle">
+            Have a question? Chat with our AI or follow our journey on social media.
+        </p>
+
         <div class="contact-content">
-            <div class="social-links">
-                <a href="https://www.instagram.com/mwithu_foundation/" target="_blank" class="social-card">
-                    <div class="social-icon"><i class="fa-brands fa-instagram" style="font-size: 30px; color: white;"></i></div>
-                    <div class="social-info">
-                        <h4>Instagram</h4>
-                        <p>@mwithu_foundation</p>
+            <div class="chat-buttons-grid">
+                
+                <a href="https://wa.me/ais/818741984532614?s=5" target="_blank" class="chat-card whatsapp-card">
+                    <div class="icon-wrapper"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="text-wrapper">
+                        <h3>WhatsApp Bot</h3>
+                        <p>Instant Chat Support</p>
                     </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
                 </a>
+
+                <a href="https://aistudio.instagram.com/ai/818741984532614?utm_source=ai_agent" target="_blank" class="chat-card insta-bot-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-robot"></i></div>
+                    <div class="text-wrapper">
+                        <h3>Instagram Bot</h3>
+                        <p>DM for Guidance</p>
+                    </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+
+                <a href="https://www.instagram.com/mwithu_foundation/" target="_blank" class="chat-card insta-page-card">
+                    <div class="icon-wrapper"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="text-wrapper">
+                        <h3>Official Page</h3>
+                        <p>Follow Updates</p>
+                    </div>
+                    <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -534,7 +557,7 @@
     </footer>
 
     <script>
-        // MOBILE MENU LOGIC (New)
+        // MOBILE MENU TOGGLE
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-links");
         const navLinks = document.querySelectorAll(".nav-links li");
@@ -544,14 +567,12 @@
             navMenu.classList.toggle("active");
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(n => n.addEventListener("click", () => {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
         }));
 
-
-        // Generate floating particles
+        // PARTICLES
         const particlesContainer = document.querySelector('.particles');
         for (let i = 0; i < 20; i++) {
             const particle = document.createElement('div');
@@ -564,28 +585,19 @@
             particlesContainer.appendChild(particle);
         }
 
-        // Smooth scrolling
+        // SMOOTH SCROLL
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Removed Form Event Listener (Since form HTML is missing to prevent errors)
-
-        // Intersection Observer for feature cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        // ANIMATION ON SCROLL
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
